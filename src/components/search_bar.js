@@ -8,7 +8,7 @@ class SearchBar extends Component {
 
     render() {
         return (
-            <div>
+            <div className="search-bar">
                 <input 
                     defaultValue={this.state.term}
                     onKeyPress={event => this.onInputChange(event.target.value, event.key)}
@@ -18,7 +18,7 @@ class SearchBar extends Component {
         )
     }
 
-    // 
+    // executes video search and sets state for term 
     onInputChange(term, keyPress) {
         if (keyPress === 'Enter') {
             this.props.onSearchTermEnter(term);
