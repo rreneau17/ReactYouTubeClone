@@ -10,15 +10,20 @@ class SearchBar extends Component {
         return (
             <div>
                 <input 
-                    value={this.state.term}
-                    onChange={(event) => this.onInputChange(event.target.value)} />
+                    defaultValue={this.state.term}
+                    onKeyPress={event => this.onInputChange(event.target.value, event.key)}
+                    // onChange={(event) => this.onInputChange(event.target)} 
+                />
             </div>
         )
     }
 
-    onInputChange(term) {
-        this.setState({ term });
-        console.log(term);
+    // 
+    onInputChange(term, keyPress) {
+        if (keyPress === 'Enter') {
+            this.props.onSearchTermEnter(term);
+            this.setState({ term });
+        } 
     }
 }
 
