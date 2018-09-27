@@ -4,7 +4,7 @@ const VideoDetail = ({ video }) => {
     // diplay message if video not loaded yet
     if(!video) return <div>Loading...</div>;
 
-    // provide video link for selected video 
+    // provide video link for the selected video 
     const videoId = video.id.videoId;
     const url = `https://youtube.com/embed/${videoId}`;
 
