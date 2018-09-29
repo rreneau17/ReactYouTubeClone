@@ -18,7 +18,7 @@ class SearchBar extends Component {
         )
     }
 
-    // executes video search and sets state for term 
+    // executes video search and sets state for term when enter is pressed
     onInputChange(term, keyPress) {
         if (keyPress === 'Enter') {
             this.props.onSearchTermEnter(term);
